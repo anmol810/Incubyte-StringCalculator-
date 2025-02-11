@@ -1,2 +1,2 @@
-# Incubyte-StringCalculator-
+# Incubyte-StringCalculator
 String Calculator 
