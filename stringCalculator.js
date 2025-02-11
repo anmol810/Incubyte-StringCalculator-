@@ -1,15 +1,16 @@
-const { REGEX } = require("./contant");
 const { findSumWithCommaSeperatedValue } = require("./helper");
-function add(input) {
-  if (!input.length) return 0;
+function add(numbers) {
+  if (!numbers.length) return 0;
   // to handle input starting with //
-  if (input.startsWith("//")) {
-    input = input.substring(2);
+  let delimiter = /,|\n/;
+  if (numbers.startsWith("//")) {
+    const match = numbers.match(/^\/\/(.+)\n/);
+    delimiter = new RegExp(match[1]);
+    numbers = numbers.slice(match[0].length);
   }
-  // to handle input for , and \n  seperated input
-  const result = input.split(REGEX).map((num) => num.length && Number(num));
-  // handle input for new line \n
-  return findSumWithCommaSeperatedValue(result);
+  // Split numbers and convert to integers
+  const numArray = numbers.split(delimiter).map(Number);
+  return findSumWithCommaSeperatedValue(numArray);
 }
-console.log(add("1\n,2,3"));
+console.log(add("//;\n1;2"));
 module.exports = add;
