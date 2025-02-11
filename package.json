@@ -1,0 +1,23 @@
+{
+  "name": "incubyte-stringcalculator-",
+  "version": "1.0.0",
+  "description": "String Calculator",
+  "main": "index.js",
+  "scripts": {
+     "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anmol810/Incubyte-StringCalculator-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anmol810/Incubyte-StringCalculator-/issues"
+  },
+  "homepage": "https://github.com/anmol810/Incubyte-StringCalculator-#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
