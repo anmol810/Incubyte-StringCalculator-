@@ -1,4 +1,8 @@
-const { findSumWithCommaSeperatedValue } = require("./helper");
+const {
+  findSumWithCommaSeperatedValue,
+  checkForNegativeNumber,
+} = require("./helper");
+
 function add(numbers) {
   if (!numbers.length) return 0;
   // to handle input starting with //
@@ -10,7 +14,13 @@ function add(numbers) {
   }
   // Split numbers and convert to integers
   const numArray = numbers.split(delimiter).map(Number);
+  // Check for negative numbers
+  const negativeNumbers = checkForNegativeNumber(numArray);
+  if (negativeNumbers.length) {
+    throw new Error("negative numbers not allowed");
+  }
+
   return findSumWithCommaSeperatedValue(numArray);
 }
-console.log(add("//;\n1;2"));
+
 module.exports = add;
