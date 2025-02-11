@@ -6,7 +6,7 @@ function add(input) {
   if (input.startsWith("//")) {
     input = input.substring(2);
   }
-  // to handle input for , seperated input
+  // to handle input for , and \n  seperated input
   const result = input.split(REGEX).map((num) => num.length && Number(num));
   // handle input for new line \n
   return findSumWithCommaSeperatedValue(result);
