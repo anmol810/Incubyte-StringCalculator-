@@ -11,3 +11,6 @@ test("returns the sum of numbers having comma (,) and new line (\n)", () => {
 test("returns the sum of numbers starting with //", () => {
   expect(add("//;\n1;2")).toBe(3);
 });
+test("throws error if string has negative number", () => {
+  expect(add("1,2,-3")).toThrow("negative numbers not allowed");
+});
